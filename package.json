@@ -1,6 +1,6 @@
 {
   "name": "supabase-env-generator",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Generate the .env secrets for your Supabase instance using a single CLI command",
   "author": "Kerren Ortlepp @Kerren-Entrostat",
   "bin": {
@@ -54,9 +54,7 @@
       "@oclif/plugin-help"
     ],
     "topicSeparator": " ",
-    "topics": {
-
-    }
+    "topics": {}
   },
   "scripts": {
     "build": "shx rm -rf dist && tsc -b",
