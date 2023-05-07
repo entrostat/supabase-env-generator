@@ -19,7 +19,7 @@ $ npm install -g supabase-env-generator
 $ supabase-env-generator COMMAND
 running command...
 $ supabase-env-generator (--version)
-supabase-env-generator/0.1.0 linux-x64 node-v16.19.0
+supabase-env-generator/0.1.1 linux-x64 node-v16.19.0
 $ supabase-env-generator --help [COMMAND]
 USAGE
   $ supabase-env-generator COMMAND
@@ -28,49 +28,44 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`supabase-env-generator hello PERSON`](#supabase-env-generator-hello-person)
-* [`supabase-env-generator hello world`](#supabase-env-generator-hello-world)
+* [`supabase-env-generator generate`](#supabase-env-generator-generate)
 * [`supabase-env-generator help [COMMANDS]`](#supabase-env-generator-help-commands)
 
-## `supabase-env-generator hello PERSON`
+## `supabase-env-generator generate`
 
-Say hello
+Generate the secrets for the .env file in Supabase
 
 ```
 USAGE
-  $ supabase-env-generator hello PERSON -f <value>
-
-ARGUMENTS
-  PERSON  Person to say hello to
+  $ supabase-env-generator generate [-o env|json|yaml] [-j <value>] [-d <value>] [-l <value>]
 
 FLAGS
-  -f, --from=<value>  (required) Who is saying hello
+  -d, --jwt-secret-dict=<value>    [default:
+                                   abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789[]{}()<>~._-+=:;,] The
+                                   dictionary that you would like to use to generate the JWT secret. If not provided,
+                                   the default dictionary will be used.
+  -j, --jwt-secret=<value>         The JWT secret that you would like to use. If not provided, a random secret will be
+                                   generated.
+  -l, --jwt-secret-length=<value>  [default: 64] The length of the JWT secret that you would like to generate. If not
+                                   provided, the default length will be used.
+  -o, --output=<option>            [default: env] The output format that you would like to print the data. You can use
+                                   this to `tee` the data into a file.
+                                   <options: env|json|yaml>
 
 DESCRIPTION
-  Say hello
+  Generate the secrets for the .env file in Supabase
 
 EXAMPLES
-  $ oex hello friend --from oclif
-  hello friend from oclif! (./src/commands/hello/index.ts)
+  $ supabase-env-generator generate
+
+  $ supabase-env-generator generate -o yaml | tee output.yaml
+
+  $ supabase-env-generator generate -o yaml --jwt-secret-dict=abcdef0123456789 | tee output.yaml
+
+  $ supabase-env-generator generate --jwt-secret=my-jwt-secret -o json > tee output.json
 ```
 
-_See code: [dist/commands/hello/index.ts](https://github.com/entrostat/supabase-env-generator/blob/v0.1.0/dist/commands/hello/index.ts)_
-
-## `supabase-env-generator hello world`
-
-Say hello world
-
-```
-USAGE
-  $ supabase-env-generator hello world
-
-DESCRIPTION
-  Say hello world
-
-EXAMPLES
-  $ supabase-env-generator hello world
-  hello world! (./src/commands/hello/world.ts)
-```
+_See code: [dist/commands/generate.ts](https://github.com/entrostat/supabase-env-generator/blob/v0.1.1/dist/commands/generate.ts)_
 
 ## `supabase-env-generator help [COMMANDS]`
 
