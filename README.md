@@ -10,6 +10,9 @@ Generate the `ANON_KEY` and `SERVICE_KEY` for your Supabase instance and output 
 
 <!-- toc -->
 * [Usage](#usage)
+* [YAML output](#yaml-output)
+* [JSON output](#json-output)
+* [.env output](#env-output)
 * [Commands](#commands)
 <!-- tocstop -->
 # Usage
@@ -39,7 +42,7 @@ $ npm install -g supabase-env-generator
 $ supabase-env-generator COMMAND
 running command...
 $ supabase-env-generator (--version)
-supabase-env-generator/0.1.1 linux-x64 node-v16.19.0
+supabase-env-generator/1.0.0 linux-x64 node-v16.19.0
 $ supabase-env-generator --help [COMMAND]
 USAGE
   $ supabase-env-generator COMMAND
@@ -85,7 +88,7 @@ EXAMPLES
   $ supabase-env-generator generate --jwt-secret=my-jwt-secret -o json > tee output.json
 ```
 
-_See code: [dist/commands/generate.ts](https://github.com/entrostat/supabase-env-generator/blob/v0.1.1/dist/commands/generate.ts)_
+_See code: [dist/commands/generate.ts](https://github.com/entrostat/supabase-env-generator/blob/v1.0.0/dist/commands/generate.ts)_
 
 ## `supabase-env-generator help [COMMANDS]`
 
