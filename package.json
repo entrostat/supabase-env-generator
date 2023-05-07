@@ -72,6 +72,15 @@
   },
   "bugs": "https://github.com/entrostat/supabase-env-generator/issues",
   "keywords": [
+    "supabase",
+    "env",
+    "cli",
+    "generator",
+    "anon",
+    "service",
+    "key",
+    "devops",
+    "deployment",
     "oclif"
   ],
   "types": "dist/index.d.ts"
