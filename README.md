@@ -13,6 +13,26 @@ Generate the `ANON_KEY` and `SERVICE_KEY` for your Supabase instance and output 
 * [Commands](#commands)
 <!-- tocstop -->
 # Usage
+
+The recommended usage for this would be to use `npx`, an example would be as follows:
+
+```shell
+# YAML output
+npx supabase-env-generator generate -o yaml | tee output.yaml
+
+# JSON output
+npx supabase-env-generator generate -o json | tee output.json
+
+# .env output
+npx supabase-env-generator generate | tee .env
+```
+
+You can now plug/pipe this into your deployment tools to carry this through to your deployment.
+
+--- 
+
+Full usage can be seen below
+
 <!-- usage -->
 ```sh-session
 $ npm install -g supabase-env-generator
