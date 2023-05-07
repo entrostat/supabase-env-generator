@@ -20,12 +20,16 @@
     "@oclif/core": "^2",
     "@oclif/plugin-help": "^5",
     "@oclif/plugin-plugins": "^2.4.7",
+    "js-yaml": "^4.1.0",
+    "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.21",
     "luxon": "^3.3.0"
   },
   "devDependencies": {
     "@oclif/test": "^2.3.17",
     "@types/chai": "^4",
+    "@types/js-yaml": "^4.0.5",
+    "@types/jsonwebtoken": "^9.0.2",
     "@types/lodash": "^4.14.194",
     "@types/luxon": "^3.3.0",
     "@types/mocha": "^9.0.0",

@@ -1,5 +1,7 @@
-import { Args, Command, Flags } from "@oclif/core";
+import { Command, Flags } from "@oclif/core";
 import { shuffle } from "lodash";
+import * as jwt from "jsonwebtoken";
+import * as jsYaml from "js-yaml";
 
 export default class Generate extends Command {
   static description = `Generate the secrets for the .env file in Supabase`;
@@ -52,6 +54,55 @@ export default class Generate extends Command {
         flags["jwt-secret-dict"],
         flags["jwt-secret-length"],
       );
+    }
+
+    // 2. Generate the anon key
+    const anonKey = jwt.sign(
+      {
+        role: "anon",
+      },
+      jwtSecret,
+      {
+        algorithm: "HS256",
+        expiresIn: "5y",
+        issuer: "supabase",
+      },
+    );
+
+    // 3. Generate the service account key
+    const serviceRoleKey = jwt.sign(
+      {
+        role: "service_role",
+      },
+      jwtSecret,
+      {
+        algorithm: "HS256",
+        expiresIn: "5y",
+        issuer: "supabase",
+      },
+    );
+
+    // 4. Output the data
+    const outputJson: { [key: string]: string } = {
+      JWT_SECRET: jwtSecret,
+      ANON_KEY: anonKey,
+      SERVICE_KEY: serviceRoleKey,
+    };
+
+    switch (flags.output) {
+      case "env":
+        for (const key in outputJson) {
+          this.log(`${key}="${outputJson[key]}"`);
+        }
+        break;
+      case "json":
+        this.log(JSON.stringify(outputJson, null, 2));
+        break;
+      case "yaml":
+        this.log(jsYaml.dump(outputJson));
+        break;
+      default:
+        this.error(`Unknown output type...`);
     }
   }
 
