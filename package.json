@@ -1,6 +1,6 @@
 {
   "name": "supabase-env-generator",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Generate the .env secrets for your Supabase instance using a single CLI command",
   "author": "Kerren Ortlepp @Kerren-Entrostat",
   "bin": {
