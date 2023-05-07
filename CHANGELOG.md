@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+### [0.1.1](https://github.com/entrostat/supabase-env-generator/compare/v0.1.0...v0.1.1) (2023-05-07)
+
+
+### Bug Fixes
+
+* **devops:** Build before running a release ([76d695f](https://github.com/entrostat/supabase-env-generator/commit/76d695f906be92c6f00d8c6766ca8b0542ef36e9))
+
 ## [0.1.0](https://github.com/entrostat/supabase-env-generator/compare/v0.0.1...v0.1.0) (2023-05-07)
 
 
