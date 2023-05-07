@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+### [1.0.1](https://github.com/entrostat/supabase-env-generator/compare/v1.0.0...v1.0.1) (2023-05-07)
+
+
+### Bug Fixes
+
+* **keywords:** Updated the keywords in the package.json to ensure npm search works correctly ([759f10f](https://github.com/entrostat/supabase-env-generator/commit/759f10fbf94c37c4db93ff970784c636d1f93035))
+
 ## [1.0.0](https://github.com/entrostat/supabase-env-generator/compare/v0.1.1...v1.0.0) (2023-05-07)
 
 ### [0.1.1](https://github.com/entrostat/supabase-env-generator/compare/v0.1.0...v0.1.1) (2023-05-07)
